@@ -42,42 +42,36 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     [theme.breakpoints.up('sm')]: {
-      width: '12ch',
+      width: '20ch',
       '&:focus': {
-        width: '20ch',
+        width: '30h',
       },
     },
   },
 }));
 
+
+
 export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1, marginBottom:"2em"}}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ backgroundColor: '#EF5450' }}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
-            POKE
-          </Typography>
-          <Search>
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
+
+            <Box component="img" src="/assets/img/Pokemon-Logo-PNG.png" height="4em" display="flex" sx={{ margin: '8px' }}/>
+          </Typography>          
+          <Search style={{ width: '40ch' }}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="Buscar pokemons…"
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
